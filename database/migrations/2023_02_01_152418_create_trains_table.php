@@ -13,7 +13,7 @@ return new class extends Migration {
   public function up()
   {
     Schema::create('trains', function (Blueprint $table) {
-      $table->bigIncrements('id');
+      $table->id();
       $table->string('company');
       $table->string('departure_station');
       $table->string('arrival_station');
@@ -34,6 +34,6 @@ return new class extends Migration {
    */
   public function down()
   {
-    //
+    Schema::dropIfExists('trains');
   }
 };
